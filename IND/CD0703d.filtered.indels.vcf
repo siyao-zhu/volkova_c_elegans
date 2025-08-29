@@ -1,0 +1,65 @@
+##fileformat=VCFv4.1
+##fileDate=20190627
+##reference=/lustre/scratch112/sanger/cgppipe/canpipe/live/ref/Caenorhabditis_elegans/WBcel235/genome.fa
+##FILTER=<ID=F004,Description="Tum medium read depth strand bias check: Calls In 8% Reads Bt Depth 10 And 200 (inclusive)">
+##FILTER=<ID=F005,Description="Tum high read depth strand bias check: Calls In 4% Reads > Depth 200">
+##FILTER=<ID=F006,Description="Small call excessive repeat check: Fail if Length <= 4 and Repeats > 9">
+##FILTER=<ID=F010,Description="Variant must not exist within the Unmatched Normal Panel">
+##FILTER=<ID=F012,Description="Germline: When length < 11 and depth > 9, fail if the variant is seen in both 20% of normal reads AND 20% of tumour reads in either pindel or bwa">
+##FILTER=<ID=F018,Description="Sufficient Depth: Pass if depth > 10">
+##FILTER=<ID=F015,Description="No normal calls">
+##FILTER=<ID=F016,Description="Verify indel condition">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=NB,Number=1,Type=Integer,Description="BWA calls on the negative strand">
+##FORMAT=<ID=ND,Number=1,Type=Integer,Description="BWA mapped reads on the negative strand">
+##FORMAT=<ID=NP,Number=1,Type=Integer,Description="Pindel calls on the negative strand">
+##FORMAT=<ID=NR,Number=1,Type=Integer,Description="Total mapped reads on the negative strand">
+##FORMAT=<ID=NU,Number=1,Type=Integer,Description="Unique calls on the negative strand">
+##FORMAT=<ID=PB,Number=1,Type=Integer,Description="BWA calls on the positive strand">
+##FORMAT=<ID=PD,Number=1,Type=Integer,Description="BWA mapped reads on the positive strand">
+##FORMAT=<ID=PP,Number=1,Type=Integer,Description="Pindel calls on the positive strand">
+##FORMAT=<ID=PR,Number=1,Type=Integer,Description="Total mapped reads on the positive strand">
+##FORMAT=<ID=PU,Number=1,Type=Integer,Description="Unique calls on the positive strand">
+##FORMAT=<ID=TG,Number=1,Type=Integer,Description="Total distinct contributing read groups">
+##FORMAT=<ID=VG,Number=1,Type=Integer,Description="Variant distinct contributing read groups">
+##FORMAT=<ID=MTR,Number=1,Type=Integer,Description="Reads reporting the variant allele">
+##FORMAT=<ID=WTR,Number=1,Type=Integer,Description="Reads reporting the reference allele">
+##FORMAT=<ID=AMB,Number=1,Type=Integer,Description="Reads mapping on both the alleles with same specificity">
+##FORMAT=<ID=UNK,Number=1,Type=Integer,Description="Reads containing mismatch in the variant position and don't align to ref as first hit">
+##FORMAT=<ID=VAF,Number=1,Type=Float,Description="Variant Allele Fraction (excludes ambiguous:AMB and unknown:UNK reads if any)">
+##INFO=<ID=PC,Number=1,Type=String,Description="Pindel call">
+##INFO=<ID=RS,Number=1,Type=Integer,Description="Range start">
+##INFO=<ID=RE,Number=1,Type=Integer,Description="Range end">
+##INFO=<ID=LEN,Number=1,Type=Integer,Description="Length">
+##INFO=<ID=REP,Number=1,Type=Integer,Description="Change repeat count within range">
+##INFO=<ID=S1,Number=1,Type=Integer,Description="S1">
+##INFO=<ID=S2,Number=1,Type=Float,Description="S2">
+##INFO=<ID=F017,Number=0,Type=Flag,Description="Variant must not overlap with a simple repeat">
+##INFO=<ID=VD,Number=1,Type=String,Description="Vagrent Default Annotation">
+##INFO=<ID=VW,Number=1,Type=String,Description="Vagrent Most Deleterious Annotation">
+##INFO=<ID=VT,Number=1,Type=String,Description="Variant type based on the Vagrent Default Annotation">
+##INFO=<ID=VC,Number=.,Type=String,Description="Variant consequence based on the Vagrent Default Annotation">
+##SAMPLE=<ID=NORMAL,Description="Wild type",Platform=ILLUMINA,Protocol=WGS,SampleName=CD0850b>
+##SAMPLE=<ID=TUMOUR,Description="Mutant",Platform=ILLUMINA,Protocol=WGS,SampleName=CD0703d>
+##contig=<ID=MtDNA,assembly=WBcel235,length=13794,species=Worm>
+##contig=<ID=IV,assembly=WBcel235,length=17493829,species=Worm>
+##contig=<ID=III,assembly=WBcel235,length=13783801,species=Worm>
+##contig=<ID=X,assembly=WBcel235,length=17718942,species=Worm>
+##contig=<ID=I,assembly=WBcel235,length=15072434,species=Worm>
+##contig=<ID=V,assembly=WBcel235,length=20924180,species=Worm>
+##contig=<ID=II,assembly=WBcel235,length=15279421,species=Worm>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NORMAL	TUMOUR
+I	3422816	17b3d88a-30cc-11e7-8980-44b63408b92a	A	AT	660	PASS	PC=I;RS=3422816;RE=3422823;LEN=1;REP=5;S1=42;S2=936.005;F017;VD=neto-1|K03E5.1|r.?|-|-|protein_coding:insertion:5KB_upstream_variant|SO:0000010:SO:0000667:SO:0001635;VW=K03E5.2|K03E5.2a|r.?|-|-|protein_coding:CDS:intron:insertion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000667:SO:0001627;VT=Ins;VC=upstream	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG:MTR:WTR:AMB:UNK:VAF	./.:0:14:0:14:0:0:18:0:18:0:1:0:0:28:0:0:0	./.:9:17:6:17:10:6:19:5:19:6:1:2:19:15:0:0:0.56
+I	14105433	3a1397c6-30cc-11e7-8980-44b63408b92a	T	TA	1179	PASS	PC=I;RS=14105433;RE=14105442;LEN=1;REP=7;S1=168;S2=2019.86;F017;VD=dnj-29|Y63D3A.6b.2|r.?|-|-|protein_coding:CDS:intron:insertion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000667:SO:0001627;VW=dnj-29|Y63D3A.6b.2|r.?|-|-|protein_coding:CDS:intron:insertion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000667:SO:0001627;VT=Ins;VC=intronic	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG:MTR:WTR:AMB:UNK:VAF	./.:0:25:0:25:0:0:14:0:14:0:1:0:1:35:0:0:0.03	./.:18:22:11:22:18:17:20:13:20:17:1:2:38:0:0:0:1
+II	1511809	807cc6c0-30cb-11e7-b66b-b8169d1395cd	G	GT	443	PASS	PC=I;RS=1511809;RE=1511818;LEN=1;REP=7;S1=24;S2=677.006;F017;VD=fgt-1|H17B01.1b|r.?|-|-|protein_coding:insertion:5KB_downstream_variant|SO:0000010:SO:0000667:SO:0001633;VW=math-45|Y51H7BM.1|r.?|-|-|protein_coding:CDS:intron:insertion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000667:SO:0001627;VT=Ins;VC=downstream	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG:MTR:WTR:AMB:UNK:VAF	./.:0:16:0:16:0:0:16:0:16:0:1:0:0:29:0:0:0	./.:5:14:5:14:5:6:16:3:16:6:1:2:12:15:0:0:0.44
+II	13440429	a3334c52-30cb-11e7-b66b-b8169d1395cd	C	CA	780	PASS	PC=I;RS=13440429;RE=13440440;LEN=1;REP=9;S1=50;S2=1102.09;F017;VD=tbc-14|E01G4.1|r.?|-|-|protein_coding:insertion:5KB_downstream_variant|SO:0000010:SO:0000667:SO:0001633;VW=tbc-15|Y48E1C.3|r.?|-|-|protein_coding:CDS:intron:insertion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000667:SO:0001627;VT=Ins;VC=downstream	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG:MTR:WTR:AMB:UNK:VAF	./.:0:21:0:21:0:0:21:0:21:0:1:0:0:38:0:0:0	./.:7:14:4:14:7:13:26:9:26:13:1:2:21:14:0:1:0.6
+III	235630	e8eb5c4a-30ca-11e7-a81f-a6dba9c641f5	A	AT	780	PASS	PC=I;RS=235630;RE=235638;LEN=1;REP=6;S1=56;S2=1098.3;F017;VD=hpo-29|Y50D7A.4.1|r.?|-|-|protein_coding:insertion:2KB_upstream_variant|SO:0000010:SO:0000667:SO:0001636;VW=hpo-29|Y50D7A.4.1|r.?|-|-|protein_coding:insertion:2KB_upstream_variant|SO:0000010:SO:0000667:SO:0001636;VT=Ins;VC=upstream	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG:MTR:WTR:AMB:UNK:VAF	./.:0:16:0:16:0:0:16:0:16:0:1:0:1:30:0:0:0.03	./.:11:15:6:15:11:10:15:7:15:10:1:2:22:0:0:0:1
+III	1191856	eb95a248-30ca-11e7-a81f-a6dba9c641f5	A	AT	780	PASS	PC=I;RS=1191856;RE=1191865;LEN=1;REP=7;S1=44;S2=1104.32;F017;VD=Y119D3B.14|Y119D3B.14|r.?|-|-|protein_coding:CDS:intron:insertion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000667:SO:0001627;VW=Y119D3B.14|Y119D3B.14|r.?|-|-|protein_coding:CDS:intron:insertion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000667:SO:0001627;VT=Ins;VC=intronic	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG:MTR:WTR:AMB:UNK:VAF	./.:0:16:0:16:0:0:22:0:22:0:1:0:0:32:0:0:0	./.:18:18:10:18:18:18:19:3:19:18:1:2:36:0:0:0:1
+III	12018060	cbbc9058-30ca-11e7-a81f-a6dba9c641f5	TCC	T	300	F006;F015	PC=D;RS=12018060;RE=12018074;LEN=2;REP=13;S1=12;S2=428.257;F017;VD=brp-1|Y79H2A.1a.2|r.?|-|-|protein_coding:deletion:5KB_upstream_variant|SO:0000010:SO:0000159:SO:0001635;VW=brp-1|Y79H2A.1a.2|r.?|-|-|protein_coding:deletion:5KB_upstream_variant|SO:0000010:SO:0000159:SO:0001635;VT=Del;VC=upstream	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG	./.:0:18:0:18:0:1:17:0:17:1:1:1	./.:7:20:3:20:7:6:15:2:15:6:1:2
+IV	11301687	040bf334-30cd-11e7-b391-eebb3408b92a	G	GA	780	F015	PC=I;RS=11301687;RE=11301698;LEN=1;REP=9;S1=56;S2=1100.06;F017;VD=dnj-1|B0035.14a.2|r.?|-|-|protein_coding:CDS:intron:insertion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000667:SO:0001627;VW=dnj-1|B0035.14a.2|r.?|-|-|protein_coding:CDS:intron:insertion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000667:SO:0001627;VT=Ins;VC=intronic	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG	./.:1:19:0:19:1:2:29:0:29:2:1:1	./.:7:23:7:23:7:8:24:6:24:8:1:2
+IV	13235690	a8229f50-30cc-11e7-b391-eebb3408b92a	CA	C	600	F006;F015	PC=D;RS=13235690;RE=13235701;LEN=1;REP=10;S1=32;S2=853.149;F017;VD=JC8.2|JC8.2.1|r.?|-|-|protein_coding:CDS:intron:deletion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000159:SO:0001627;VW=JC8.2|JC8.2.1|r.?|-|-|protein_coding:CDS:intron:deletion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000159:SO:0001627;VT=Del;VC=intronic	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG	./.:1:13:1:13:1:0:20:0:20:0:1:1	./.:4:15:2:15:4:7:17:7:17:7:1:2
+V	5513592	9a453554-30cd-11e7-b6e7-a21a9d1395cd	C	CA	600	PASS	PC=I;RS=5513592;RE=5513599;LEN=1;REP=5;S1=32;S2=846.736;F017;VD=mms-19|C24G6.3.2|r.?|-|-|protein_coding:insertion:2KB_upstream_variant|SO:0000010:SO:0000667:SO:0001636;VW=hpo-15|C24G6.6.2|r.?|-|-|protein_coding:five_prime_UTR:intron:insertion:intron_variant|SO:0000010:SO:0000204:SO:0000188:SO:0000667:SO:0001627;VT=Ins;VC=upstream	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG:MTR:WTR:AMB:UNK:VAF	./.:0:20:0:20:0:0:16:0:16:0:1:0:0:39:0:0:0	./.:4:22:3:22:4:7:20:7:20:7:1:2:9:28:0:0:0.24
+V	9529156	aa6ae4d8-30cd-11e7-b6e7-a21a9d1395cd	C	CT	1020	PASS	PC=I;RS=9529156;RE=9529166;LEN=1;REP=8;S1=90;S2=1433.43;F017;VD=C50F4.1|C50F4.1.1|r.1222_1223insu|c.?|p.?|protein_coding:three_prime_UTR:exon:insertion:3_prime_UTR_variant:transcript_variant|SO:0000010:SO:0000205:SO:0000147:SO:0000667:SO:0001624:SO:0001576;VW=C50F4.1|C50F4.1.1|r.1222_1223insu|c.?|p.?|protein_coding:three_prime_UTR:exon:insertion:3_prime_UTR_variant:transcript_variant|SO:0000010:SO:0000205:SO:0000147:SO:0000667:SO:0001624:SO:0001576;VT=Ins;VC=3prime_UTR_variant	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG:MTR:WTR:AMB:UNK:VAF	./.:0:16:0:16:0:0:9:0:9:0:1:0:0:22:0:0:0	./.:10:15:8:15:10:14:16:9:16:14:1:2:29:1:0:0:0.97
+V	16635648	c001acbe-30cd-11e7-b6e7-a21a9d1395cd	T	TA	660	PASS	PC=I;RS=16635648;RE=16635657;LEN=1;REP=7;S1=40;S2=930.807;F017;VD=mltn-11|W06G6.7|r.?|-|-|protein_coding:insertion:5KB_upstream_variant|SO:0000010:SO:0000667:SO:0001635;VW=mltn-11|W06G6.7|r.?|-|-|protein_coding:insertion:5KB_upstream_variant|SO:0000010:SO:0000667:SO:0001635;VT=Ins;VC=upstream	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG:MTR:WTR:AMB:UNK:VAF	./.:0:26:0:26:0:0:13:0:13:0:1:0:0:37:0:0:0	./.:9:28:7:28:9:7:18:4:18:7:1:2:21:30:0:0:0.41
+V	18820437	3678a9fc-30cd-11e7-b6e7-a21a9d1395cd	AT	A	780	PASS	PC=D;RS=18820437;RE=18820447;LEN=1;REP=9;S1=54;S2=1112.8;F017;VD=C54E10.1|C54E10.1|r.?|-|-|protein_coding:deletion:5KB_downstream_variant|SO:0000010:SO:0000159:SO:0001633;VW=C54E10.8|C54E10.8|r.?|-|-|protein_coding:CDS:intron:deletion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000159:SO:0001627;VT=Del;VC=downstream	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG:MTR:WTR:AMB:UNK:VAF	./.:0:17:0:17:0:0:16:0:16:0:1:0:0:36:1:0:0	./.:13:16:8:16:13:14:15:5:15:14:1:2:22:0:2:0:1
+X	10263791	a98513d8-30cb-11e7-83e0-6fdda9c641f5	C	CA	540	F015	PC=I;RS=10263791;RE=10263802;LEN=1;REP=9;S1=30;S2=759.404;F017;VD=C32A9.1|C32A9.1|r.?|-|-|protein_coding:insertion:5KB_upstream_variant|SO:0000010:SO:0000667:SO:0001635;VW=C32A9.1|C32A9.1|r.?|-|-|protein_coding:insertion:5KB_upstream_variant|SO:0000010:SO:0000667:SO:0001635;VT=Ins;VC=upstream	GT:NB:ND:NP:NR:NU:PB:PD:PP:PR:PU:TG:VG	./.:0:18:0:18:0:4:28:1:28:4:1:2	./.:4:16:4:16:4:10:20:4:20:10:1:2

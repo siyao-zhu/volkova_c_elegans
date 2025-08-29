@@ -1,0 +1,53 @@
+##fileformat=VCFv4.1
+##fileDate=20190627
+##reference=genome.fa
+##FILTER=<ID=F004,Description="Tum medium read depth strand bias check: Calls In 8% Reads Bt Depth 10 And 200 (inclusive)">
+##FILTER=<ID=F005,Description="Tum high read depth strand bias check: Calls In 4% Reads > Depth 200">
+##FILTER=<ID=F006,Description="Small call excessive repeat check: Fail if Length <= 4 and Repeats > 9">
+##FILTER=<ID=F010,Description="Variant must not exist within the Unmatched Normal Panel">
+##FILTER=<ID=F012,Description="Germline: When length < 11 and depth > 9, fail if the variant is seen in both 20% of normal reads AND 20% of tumour reads in either pindel or bwa">
+##FILTER=<ID=F018,Description="Sufficient Depth: Pass if depth > 10">
+##FILTER=<ID=F015,Description="No normal calls">
+##FILTER=<ID=F016,Description="Verify indel condition">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##FORMAT=<ID=PP,Number=1,Type=Integer,Description="Pindel calls on the positive strand">
+##FORMAT=<ID=NP,Number=1,Type=Integer,Description="Pindel calls on the negative strand">
+##FORMAT=<ID=PB,Number=1,Type=Integer,Description="BWA calls on the positive strand">
+##FORMAT=<ID=NB,Number=1,Type=Integer,Description="BWA calls on the negative strand">
+##FORMAT=<ID=PD,Number=1,Type=Integer,Description="BWA mapped reads on the positive strand">
+##FORMAT=<ID=ND,Number=1,Type=Integer,Description="BWA mapped reads on the negative strand">
+##FORMAT=<ID=PR,Number=1,Type=Integer,Description="Total mapped reads on the positive strand">
+##FORMAT=<ID=NR,Number=1,Type=Integer,Description="Total mapped reads on the negative strand">
+##FORMAT=<ID=PU,Number=1,Type=Integer,Description="Unique calls on the positive strand">
+##FORMAT=<ID=NU,Number=1,Type=Integer,Description="Unique calls on the negative strand">
+##INFO=<ID=PC,Number=1,Type=String,Description="Pindel call">
+##INFO=<ID=RS,Number=1,Type=Integer,Description="Range start">
+##INFO=<ID=RE,Number=1,Type=Integer,Description="Range end">
+##INFO=<ID=LEN,Number=1,Type=Integer,Description="Length">
+##INFO=<ID=S1,Number=1,Type=Integer,Description="S1">
+##INFO=<ID=S2,Number=1,Type=Float,Description="S2">
+##INFO=<ID=PA,Number=1,Type=String,Description="Annotation on the positive strand">
+##INFO=<ID=NA,Number=1,Type=String,Description="Annotation on the negative strand">
+##INFO=<ID=REP,Number=1,Type=Integer,Description="Change repeat count with range">
+##INFO=<ID=PRV,Number=1,Type=Float,Description="Fraction of reads reporting the most prevalent change">
+##INFO=<ID=F017,Number=0,Type=Flag,Description="Variant must not overlap with a simple repeat">
+##INFO=<ID=VD,Number=1,Type=String,Description="Vagrent Default Annotation">
+##INFO=<ID=VW,Number=1,Type=String,Description="Vagrent Most Deleterious Annotation">
+##INFO=<ID=VT,Number=1,Type=String,Description="Variant type based on the Vagrent Default Annotation">
+##INFO=<ID=VC,Number=1,Type=String,Description="Variant consequence based on the Vagrent Default Annotation">
+##SAMPLE=<ID=NORMAL,Description="Normal",Accession=1567436,CGP_Project,Platform=HiSeq,Protocol=genomic,SampleName=CD0001b,Source=COSMIC_SAMPLE_ID>
+##SAMPLE=<ID=TUMOUR,Description="Mutant",Accession=2217150,CGP_Project,Platform=HiSeq,Protocol=genomic,SampleName=CD0248d,Source=COSMIC_SAMPLE_ID>
+##contig=<ID=MtDNA,assembly=WBcel235,length=13794,species=WORM>
+##contig=<ID=IV,assembly=WBcel235,length=17493829,species=WORM>
+##contig=<ID=III,assembly=WBcel235,length=13783801,species=WORM>
+##contig=<ID=X,assembly=WBcel235,length=17718942,species=WORM>
+##contig=<ID=I,assembly=WBcel235,length=15072434,species=WORM>
+##contig=<ID=V,assembly=WBcel235,length=20924180,species=WORM>
+##contig=<ID=II,assembly=WBcel235,length=15279421,species=WORM>
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	NORMAL	TUMOUR
+I	624270	2816040693	CATTTTCGTCGCCATTCGATGCGGGTTCCCAGTGATGTATCGATTTTCAGTTGATTATCGATTTTTCGCTCCACGTACAGTACACTGAGTTCCGCTTCGAGGCCATCTGAAATTTTTTTTTTA	C	1102	PASS	PC=D;RS=624270;RE=624398;LEN=122;S1=396;S2=2656.04;REP=1;PRV=1;F017;VD=F56A6.4|F56A6.4.2|r.547-17_651del122|c.545-17_649del122|p.?|protein_coding:CDS:extended_intronic_splice_region:exon:extended_cis_splice_site:intron:deletion:complex_change_in_transcript:transcript_variant|SO:0000010:SO:0000316:SO:CGPX05:SO:0000147:SO:CGPX06:SO:0000188:SO:0000159:SO:0001577:SO:0001576;VW=F56A6.4|F56A6.4.2|r.547-17_651del122|c.545-17_649del122|p.?|protein_coding:CDS:extended_intronic_splice_region:exon:extended_cis_splice_site:intron:deletion:complex_change_in_transcript:transcript_variant|SO:0000010:SO:0000316:SO:CGPX05:SO:0000147:SO:CGPX06:SO:0000188:SO:0000159:SO:0001577:SO:0001576;VT=Del;VC=ess splice	GT:PP:NP:PB:NB:PD:ND:PR:NR:PU:NU	./.:0:0:0:0:19:22:19:22:0:0	./.:17:21:0:0:8:2:25:23:17:21
+I	12855645	2816042555	T	TA	1687	PASS	PC=I;RS=12855645;RE=12855654;LEN=1;S1=285;S2=2219.58;REP=8;PRV=1;F017;VD=Y18D10A.8|Y18D10A.8|r.?|-|-|protein_coding:insertion:5KB_downstream_variant|SO:0000010:SO:0000667:SO:0001633;VW=Y18D10A.9|Y18D10A.9|r.?|-|-|protein_coding:CDS:intron:insertion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000667:SO:0001627;VT=Ins;VC=downstream	GT:PP:NP:PB:NB:PD:ND:PR:NR:PU:NU	./.:0:0:0:0:23:20:23:20:0:0	./.:14:18:37:44:47:58:48:60:37:44
+II	6328312	2816043800	CT	C	4080	PASS	PC=D;RS=6328312;RE=6328316;LEN=1;S1=1200;S2=4757.8;REP=3;PRV=1;F017;VD=sma-6|C32D5.2|r.?|-|-|protein_coding:deletion:5KB_downstream_variant|SO:0000010:SO:0000159:SO:0001633;VW=sma-6|C32D5.2|r.?|-|-|protein_coding:deletion:5KB_downstream_variant|SO:0000010:SO:0000159:SO:0001633;VT=Del;VC=downstream	GT:PP:NP:PB:NB:PD:ND:PR:NR:PU:NU	./.:0:0:0:0:16:34:16:34:0:0	./.:29:39:42:48:46:53:46:53:42:48
+III	11495274	2816046916	G	GA	2429	PASS	PC=I;RS=11495274;RE=11495284;LEN=1;S1=460;S2=2842.5;REP=9;PRV=1;F017;VD=nars-2|Y66D12A.23.2|r.?|-|-|protein_coding:five_prime_UTR:intron:insertion:intron_variant|SO:0000010:SO:0000204:SO:0000188:SO:0000667:SO:0001627;VW=nars-2|Y66D12A.23.2|r.?|-|-|protein_coding:five_prime_UTR:intron:insertion:intron_variant|SO:0000010:SO:0000204:SO:0000188:SO:0000667:SO:0001627;VT=Ins;VC=intronic	GT:PP:NP:PB:NB:PD:ND:PR:NR:PU:NU	./.:0:0:0:0:19:17:19:18:0:0	./.:22:19:36:31:48:41:49:41:36:31
+V	18689354	2816052409	GAAAAAAAAAAA	G	1595	F015	PC=D;RS=18689354;RE=18689370;LEN=11;S1=806;S2=3842.39;REP=15;PRV=1;F017;VD=Y69H2.7|Y69H2.7b|r.?|-|-|protein_coding:deletion:2KB_upstream_variant|SO:0000010:SO:0000159:SO:0001636;VW=ubc-19|Y69H2.6|r.?|-|-|protein_coding:CDS:intron:deletion:intron_variant|SO:0000010:SO:0000316:SO:0000188:SO:0000159:SO:0001627;VT=Del;VC=upstream	GT:PP:NP:PB:NB:PD:ND:PR:NR:PU:NU	./.:0:0:0:1:15:18:15:18:0:1	./.:30:25:37:27:44:31:44:31:37:27
+X	5177391	2816053748	AAAACAACAGTCGTAAT	A	1740	PASS	PC=D;RS=5177391;RE=5177410;LEN=16;S1=936;S2=4195.96;REP=1;PRV=1;F017;VD=T03G11.3|T03G11.3|r.1130_1145del16|c.930_945del16|p.N311fs*19|protein_coding:CDS:exon:deletion:frameshift_variant|SO:0000010:SO:0000316:SO:0000147:SO:0000159:SO:0001589;VW=T03G11.3|T03G11.3|r.1130_1145del16|c.930_945del16|p.N311fs*19|protein_coding:CDS:exon:deletion:frameshift_variant|SO:0000010:SO:0000316:SO:0000147:SO:0000159:SO:0001589;VT=Del;VC=frameshift	GT:PP:NP:PB:NB:PD:ND:PR:NR:PU:NU	./.:0:0:0:0:20:31:20:31:0:0	./.:25:35:32:38:41:45:41:45:32:38
